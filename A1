@@ -1,0 +1,40 @@
+Chapter 1 problem - Circuit Switching vs Packet Switching
+Assume a 1 Mbps shared link:
+
+each user is active only 10% of the time, and
+each user consumes 100 Kbps when "active".
+ 
+
+
+
+ 
+
+a) How many users can circuit switching support? Why?
+
+ 
+
+b) How many users can packet switching support (so that probability of not providing to users is less than 0.0004)? Why?
+
+ 
+ 
+ 
+ 
+ 
+ a) 10. 1Mbps/100Kbps=10
+b.) P(x) = (n choose x) * p^x * (1-p) ^ (n-x) <--- Binomial Distribution Formula
+
+Where P(x) is the overall probability (we want < .0004)
+
+n is the total number of users (unknown)
+
+x is number of active users the link can handle (10)
+
+p is probability that a given user is active (.10)
+
+ 
+
+Solving for n yields 35 as the max number of users the link can handle with packet switching.
+
+ 
+
+b) ∑35x=11(35n)(.1)n(.9)35−n≃.00042
